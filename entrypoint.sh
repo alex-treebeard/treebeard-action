@@ -31,7 +31,7 @@ echo "ACTIONS_CACHE_URL" "$ACTIONS_CACHE_URL"
 
 # ensure dir is named correctly
 mkdir -p "/var/$GITHUB_REPOSITORY"
-cp -r .* "/var/$GITHUB_REPOSITORY"
+cp -r . "/var/$GITHUB_REPOSITORY"
 cd "/var/$GITHUB_REPOSITORY"
 
 ls -la
