@@ -1,5 +1,6 @@
-#!/bin/sh -l
-
+#!/bin/bash
+set -euo pipefail
+set -x
 
 echo "INPUT_WHO-TO-GREET" "$INPUT_WHO-TO-GREET" 
 echo "HOME" "$HOME" 
@@ -30,6 +31,9 @@ echo "ACTIONS_RUNTIME_TOKEN" "$ACTIONS_RUNTIME_TOKEN"
 echo "ACTIONS_CACHE_URL" "$ACTIONS_CACHE_URL" 
 echo "GITHUB_ACTIONS=true" "$GITHUB_ACTIONS=true" 
 echo "CI=true" "$CI=true"
+
+cd "$RUNNER_WORKSPACE"
+ls -la
 
 treebeard configure --api_key "$1" --project_id "$GITHUB_REPOSITORY_OWNER" 
 treebeard run -n "$2" --confirm --watch
