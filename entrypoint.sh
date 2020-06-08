@@ -29,6 +29,10 @@ echo "ACTIONS_RUNTIME_URL" "$ACTIONS_RUNTIME_URL"
 echo "ACTIONS_RUNTIME_TOKEN" "$ACTIONS_RUNTIME_TOKEN" 
 echo "ACTIONS_CACHE_URL" "$ACTIONS_CACHE_URL" 
 
+# ensure dir is named correctly
+mkdir -p "/var/$GITHUB_REPOSITORY"
+cp -r .* "/var/$GITHUB_REPOSITORY"
+cd "/var/$GITHUB_REPOSITORY"
 
 ls -la
 
