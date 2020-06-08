@@ -1,5 +1,7 @@
-# Container image that runs your code
-FROM alpine:3.10
+FROM python:3.7
+
+RUN apt-get update && apt-get install -y docker.io
+RUN pip install treebeard
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
